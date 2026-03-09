@@ -13,10 +13,35 @@ const oswald = Oswald({
 });
 
 export const metadata = {
-  title: "Hunters Gym",
-  description: "Train Like a Hunter",
+  title: "Hunters Gym | Best Gym in Egypt",
+  description:
+    "Hunters Gym offers professional fitness training, bodybuilding programs, and personal coaching. Train Like a Hunter.",
+  
+keywords: [
+    "Hunters Gym",
+    "Gym Egypt",
+    "Bodybuilding gym",
+    "Fitness training Egypt",
+    "Personal trainer gym",
+  ],
+
   verification: {
     google: "cZPztibhOqOHPPfWPL0veS6cFXOMlgvnAGElOUgmzZU",
+  },
+
+  openGraph: {
+    title: "Hunters Gym",
+    description: "Train Like a Hunter",
+    url: "https://www.huntersgym.com",
+    siteName: "Hunters Gym",
+    images: [
+      {
+        url: "/logo-large.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
   },
 };
 
