@@ -6,7 +6,7 @@ export const site = {
   addressAr: "قطعة 8541 - شارع كريم بنونه - المقطم",
   addressEn: "Plot 8541 - Karim Benouna St. - Mokattam",
   mapsEmbedUrl:
-    "https://www.google.com/maps?q=%D9%87%D8%A7%D9%86%D8%AA%D8%B1%D8%B2%20%D8%AC%D9%8A%D9%85%20%D8%A7%D9%84%D9%85%D9%82%D8%B7%D9%85&output=embed",
+    "https://www.google.com/maps?q=Hunters%20Gym,%20Karim%20Benouna%20St,%20Mokattam,%20Cairo&t=&z=16&ie=UTF8&iwloc=B&output=embed",
   social: {
     facebook: "https://www.facebook.com/share/1KLB28aAbw/?mibextid=wwXIfr",
     instagram: "https://www.instagram.com/_hunters_gym?igsh=aXJ6NmsxazJpZm1x",
