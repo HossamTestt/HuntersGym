@@ -1,0 +1,25 @@
+[
+  {
+    "day_ar": "السبت",
+    "day_en": "Saturday",
+    "items": [
+      { "time": "10:00", "title_ar": "حديد - مبتدئين", "title_en": "Weights - Beginners" },
+      { "time": "18:00", "title_ar": "كارديو", "title_en": "Cardio" }
+    ]
+  },
+  {
+    "day_ar": "الأحد",
+    "day_en": "Sunday",
+    "items": [
+      { "time": "12:00", "title_ar": "تضخيم", "title_en": "Hypertrophy" },
+      { "time": "20:00", "title_ar": "HIIT", "title_en": "HIIT" }
+    ]
+  },
+  {
+    "day_ar": "الاثنين",
+    "day_en": "Monday",
+    "items": [
+      { "time": "18:00", "title_ar": "Full Body", "title_en": "Full Body" }
+    ]
+  }
+]

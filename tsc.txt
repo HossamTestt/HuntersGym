@@ -1,0 +1,1 @@
+﻿app/page.tsx(253,37): error TS2339: Property 'youtube' does not exist on type '{ readonly facebook: "https://www.facebook.com/share/1KLB28aAbw/?mibextid=wwXIfr"; readonly instagram: "https://www.instagram.com/_hunters_gym?igsh=aXJ6NmsxazJpZm1x"; readonly tiktok: "https://www.tiktok.com/@hunters.gym?_r=1&_t=ZS-94QBAUSDvZU"; }'.
