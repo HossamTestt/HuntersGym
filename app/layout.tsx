@@ -34,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
       <html lang="en" dir="ltr"> 
-        <body className={`${montserrat.variable} ${oswald.variable} ${alexandria.variable} font-sans antialiased scroll-smooth`}>
+        <body className={`${montserrat.variable} ${oswald.variable} ${cairo.variable} font-sans antialiased scroll-smooth`}>
         {children}
       </body>
     </html>
