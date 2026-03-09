@@ -1,0 +1,240 @@
+﻿diff --git a/app/globals.css b/app/globals.css
+index 9cfb5bb..8a8f84a 100644
+--- a/app/globals.css
++++ b/app/globals.css
+@@ -4,17 +4,36 @@
+ @theme {
+   --font-oswald: var(--font-oswald);
+   --font-montserrat: var(--font-montserrat);
+-  --font-alexandria: var(--font-alexandria);
++  --font-cairo: var(--font-cairo);
+ }
+ 
+ html {
+   scroll-behavior: smooth;
++
++  html[dir="rtl"] {
++  font-family: var(--font-ar);
++}
++
++html[dir="ltr"] {
++  font-family: var(--font-en);
++}
++  
++  html[dir="rtl"] h1 {
++  font-size: 2rem;
++}
++
++html[dir="rtl"] h2 {
++  font-size: 1.5rem;
++}
++
++html[dir="rtl"] p {
++  font-size: 1rem;
+ }
+ 
+ body {
+   background: #03070b;
+   color: white;
+-  font-family: var(--font-alexandria), sans-serif;
++  font-family: var(--font-cairo), sans-serif;
+ }
+ 
+ * {
+@@ -24,4 +43,4 @@ body {
+ ::selection {
+   background-color: #EEB41E;
+   color: #000;
+-}
+\ No newline at end of file
++}
+diff --git a/app/layout.tsx b/app/layout.tsx
+index 59d4dce..9248807 100644
+--- a/app/layout.tsx
++++ b/app/layout.tsx
+@@ -1,6 +1,6 @@
+ import "./globals.css";
+ import type { Metadata } from "next";
+-import { Montserrat, Oswald, Alexandria } from "next/font/google";
++import { Montserrat, Oswald, Cairo } from "next/font/google";
+ 
+ const montserrat = Montserrat({
+   subsets: ["latin"],
+@@ -12,9 +12,10 @@ const oswald = Oswald({
+   variable: "--font-oswald",
+ });
+ 
+-const alexandria = Alexandria({
++const cairo = Cairo({
+   subsets: ["latin", "arabic"],
+-  variable: "--font-alexandria",
++  variable: "--font-cairo",
++  weight: ["300", "400", "500", "600", "700", "800", "900"],
+ });
+ 
+ export const metadata: Metadata = {
+@@ -32,7 +33,7 @@ export default function RootLayout({
+ }) {
+   return (
+     <html lang="en">
+-      <body className={`${montserrat.variable} ${oswald.variable} ${alexandria.variable} font-sans antialiased scroll-smooth`}>
++      <body className={`${montserrat.variable} ${oswald.variable} ${cairo.variable} font-sans antialiased scroll-smooth`}>
+         {children}
+       </body>
+     </html>
+diff --git a/app/page.tsx b/app/page.tsx
+index 802edce..3e320f8 100644
+--- a/app/page.tsx
++++ b/app/page.tsx
+@@ -210,7 +210,7 @@ export default function Page() {
+               initial={{ opacity: 0, y: 28 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.7 }}
+-              className="mt-6 font-[var(--font-oswald)] text-6xl font-bold uppercase leading-[0.9] tracking-tight text-white md:text-7xl lg:text-[5.5rem]"
++              className="mt-6 font-[var(--font-oswald)] text-5xl font-bold uppercase leading-[0.9] tracking-tight text-white md:text-6xl lg:text-7xl"
+             >
+               {lang === "ar" ? (
+                 <>
+@@ -279,7 +279,7 @@ export default function Page() {
+ 
+       <section id="memberships" className="scroll-mt-28 mx-auto max-w-6xl px-4 pt-20">
+         <div className="mb-10 text-center md:text-left">
+-          <h2 className="font-[var(--font-oswald)] text-5xl font-bold uppercase text-white md:text-6xl">
++          <h2 className="font-[var(--font-oswald)] text-4xl font-bold uppercase text-white md:text-5xl">
+             {lang === "ar" ? "╪º┘ä╪╣╪╢┘ê┘è╪º╪¬" : "Membership Plans"}
+           </h2>
+           <p className="mt-3 max-w-2xl text-lg text-white/60 mx-auto md:mx-0">
+@@ -301,7 +301,7 @@ export default function Page() {
+                   <p className="text-lg font-extrabold text-[#EEB41E]">
+                     {lang === "ar" ? pkg.nameAr : pkg.nameEn}
+                   </p>
+-                  <p className="mt-3 font-[var(--font-oswald)] text-5xl font-bold tracking-tight text-white">
++                  <p className="mt-3 font-[var(--font-oswald)] text-4xl font-bold tracking-tight text-white">
+                     {pkg.price}
+                   </p>
+                 </div>
+@@ -337,7 +337,7 @@ export default function Page() {
+ 
+       <section id="gallery" className="scroll-mt-28 mx-auto max-w-6xl px-4 pt-20">
+         <div className="text-center md:text-left">
+-          <h2 className="font-[var(--font-oswald)] text-5xl font-bold uppercase text-white md:text-6xl">
++          <h2 className="font-[var(--font-oswald)] text-4xl font-bold uppercase text-white md:text-5xl">
+             {lang === "ar" ? "╪º┘ä╪¼╪º┘ä┘è╪▒┘è" : "Gallery"}
+           </h2>
+ 
+@@ -348,12 +348,12 @@ export default function Page() {
+           </p>
+         </div>
+ 
+-        <GallerySlider images={galleryImages} onImageClick={setSelectedImageIndex} />
++        <GallerySlider images={galleryImages} onImageClick={setSelectedImageIndex} dir={dir} />
+       </section>
+ 
+       <section id="contact" className="scroll-mt-28 mx-auto max-w-6xl px-4 py-20">
+         <div className="text-center md:text-left">
+-          <h2 className="font-[var(--font-oswald)] text-5xl font-bold uppercase text-white md:text-6xl">
++          <h2 className="font-[var(--font-oswald)] text-4xl font-bold uppercase text-white md:text-5xl">
+             {lang === "ar" ? "╪¬┘ê╪º╪╡┘ä ┘à╪╣┘å╪º" : "Contact Us"}
+           </h2>
+ 
+@@ -367,7 +367,7 @@ export default function Page() {
+         <div className="mt-10 grid gap-8 md:grid-cols-2 lg:gap-10">
+           <div className="space-y-8">
+             <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#0a1017] to-[#04070a] p-8 shadow-[0_0_40px_rgba(0,0,0,0.3)]">
+-              <h3 className="text-3xl font-[var(--font-oswald)] uppercase font-bold text-white">
++              <h3 className="text-2xl md:text-3xl font-[var(--font-oswald)] uppercase font-bold text-white">
+                 {lang === "ar" ? "╪¿┘è╪º┘å╪º╪¬ ╪º┘ä╪¬┘ê╪º╪╡┘ä" : "Contact Details"}
+               </h3>
+ 
+@@ -409,7 +409,7 @@ export default function Page() {
+             </div>
+ 
+             <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#0a1017] to-[#04070a] p-8 shadow-[0_0_40px_rgba(0,0,0,0.3)]">
+-              <h3 className="text-3xl font-[var(--font-oswald)] uppercase font-bold text-white">
++              <h3 className="text-2xl md:text-3xl font-[var(--font-oswald)] uppercase font-bold text-white">
+                 {lang === "ar" ? "╪¬╪º╪¿╪╣┘å╪º" : "Follow Us"}
+               </h3>
+ 
+@@ -476,7 +476,7 @@ export default function Page() {
+ 
+           <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a1017] shadow-[0_0_40px_rgba(0,0,0,0.3)]">
+             <div className="border-b border-white/10 px-8 py-6">
+-              <h3 className="text-3xl font-[var(--font-oswald)] uppercase font-bold text-white">
++              <h3 className="text-2xl md:text-3xl font-[var(--font-oswald)] uppercase font-bold text-white">
+                 {lang === "ar" ? "┘à┘ê┘é╪╣┘å╪º" : "Our Location"}
+               </h3>
+             </div>
+diff --git a/components/GallerySlider.tsx b/components/GallerySlider.tsx
+index c2ccbf2..4f51672 100644
+--- a/components/GallerySlider.tsx
++++ b/components/GallerySlider.tsx
+@@ -8,9 +8,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
+ export default function GallerySlider({
+   images,
+   onImageClick,
++  dir = "ltr",
+ }: {
+   images: string[];
+   onImageClick: (index: number) => void;
++  dir?: "rtl" | "ltr";
+ }) {
+   const autoplay = useRef(
+     Autoplay({
+@@ -21,7 +23,7 @@ export default function GallerySlider({
+   );
+ 
+   const [emblaRef, emblaApi] = useEmblaCarousel(
+-    { loop: true, align: "start" },
++    { loop: true, align: "start", direction: dir },
+     [autoplay.current]
+   );
+ 
+diff --git a/components/Navbar.tsx b/components/Navbar.tsx
+index f1b4679..1f3514f 100644
+--- a/components/Navbar.tsx
++++ b/components/Navbar.tsx
+@@ -45,7 +45,7 @@ export default function Navbar({
+             />
+ 
+             <div className="flex flex-col leading-tight">
+-              <p className="font-[var(--font-oswald)] text-xl font-bold uppercase tracking-tight text-white md:text-3xl">
++              <p className="font-[var(--font-oswald)] text-lg font-bold uppercase tracking-tight text-white md:text-2xl">
+                 Hunters Gym
+               </p>
+               <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.38em] text-[#EEB41E] md:text-xs">
+@@ -108,7 +108,7 @@ export default function Navbar({
+             onClick={(e) => e.stopPropagation()}
+           >
+             <div className="mb-10 flex items-center justify-between">
+-              <p className="font-[var(--font-oswald)] text-3xl font-bold uppercase tracking-wide text-white">
++              <p className="font-[var(--font-oswald)] text-2xl font-bold uppercase tracking-wide text-white">
+                 {lang === "ar" ? "╪º┘ä┘é╪º╪ª┘à╪⌐" : "Menu"}
+               </p>
+               <button
+@@ -123,7 +123,7 @@ export default function Navbar({
+             <div className="flex flex-col gap-6">
+               <a
+                 href="#memberships"
+-                className="text-xl font-medium text-white/80 transition hover:text-white hover:translate-x-1"
++                className="text-lg font-medium text-white/80 transition hover:text-white hover:translate-x-1"
+                 onClick={() => setMobileOpen(false)}
+               >
+                 {lang === "ar" ? "╪º┘ä╪╣╪╢┘ê┘è╪º╪¬" : "Memberships"}
+@@ -131,7 +131,7 @@ export default function Navbar({
+ 
+               <a
+                 href="#gallery"
+-                className="text-xl font-medium text-white/80 transition hover:text-white hover:translate-x-1"
++                className="text-lg font-medium text-white/80 transition hover:text-white hover:translate-x-1"
+                 onClick={() => setMobileOpen(false)}
+               >
+                 {lang === "ar" ? "╪º┘ä╪¼╪º┘ä┘è╪▒┘è" : "Gallery"}
+@@ -139,7 +139,7 @@ export default function Navbar({
+ 
+               <a
+                 href="#contact"
+-                className="text-xl font-medium text-white/80 transition hover:text-white hover:translate-x-1"
++                className="text-lg font-medium text-white/80 transition hover:text-white hover:translate-x-1"
+                 onClick={() => setMobileOpen(false)}
+               >
+                 {lang === "ar" ? "╪¬┘ê╪º╪╡┘ä" : "Contact"}

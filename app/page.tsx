@@ -210,7 +210,7 @@ export default function Page() {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="mt-6 font-[var(--font-oswald)] text-5xl font-bold uppercase leading-[0.9] tracking-tight text-white md:text-6xl lg:text-7xl"
+              className="mt-6 font-[var(--font-oswald)] text-4xl font-bold uppercase leading-[1.1] tracking-tight text-white md:text-6xl lg:text-7xl"
             >
               {lang === "ar" ? (
                 <>
@@ -230,10 +230,10 @@ export default function Page() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 22 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 md:text-xl md:leading-loose"
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="mt-6 max-w-2xl text-base text-white/70 mx-auto lg:mx-0 md:text-xl lg:text-2xl font-medium leading-relaxed"
             >
               {lang === "ar"
                 ? "مكان مصمم للقوة والانضباط والتحول الحقيقي. أجهزة قوية، أجواء احترافية، وتجربة تدريب تدفعك للأمام."
@@ -277,12 +277,16 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="memberships" className="scroll-mt-28 mx-auto max-w-6xl px-4 pt-20">
-        <div className="mb-10 text-center md:text-left">
-          <h2 className="font-[var(--font-oswald)] text-4xl font-bold uppercase text-white md:text-5xl">
+      {/* WRAPPER FOR REORDERING SECTIONS ON MOBILE */}
+      <div className="flex flex-col-reverse md:flex-col">
+        
+        {/* MEMBERSHIPS SECTION */}
+        <section id="memberships" className="scroll-mt-28 mx-auto max-w-6xl px-4 pt-16 md:pt-20">
+        <div className="mb-8 text-center md:text-left">
+          <h2 className="font-[var(--font-oswald)] text-3xl font-bold uppercase text-white md:text-5xl">
             {lang === "ar" ? "العضويات" : "Membership Plans"}
           </h2>
-          <p className="mt-3 max-w-2xl text-lg text-white/60 mx-auto md:mx-0">
+          <p className="mt-2 max-w-2xl text-base text-white/60 mx-auto md:mx-0 md:text-lg">
             {lang === "ar"
               ? "اختر الباقة المناسبة لهدفك واستمتع بتجربة تدريب متكاملة داخل Hunters Gym."
               : "Choose the package that fits your goals and enjoy a complete premium training experience at Hunters Gym."}
@@ -301,7 +305,7 @@ export default function Page() {
                   <p className="text-lg font-extrabold text-[#EEB41E]">
                     {lang === "ar" ? pkg.nameAr : pkg.nameEn}
                   </p>
-                  <p className="mt-3 font-[var(--font-oswald)] text-4xl font-bold tracking-tight text-white">
+                  <p className="mt-2 font-[var(--font-oswald)] text-3xl font-bold tracking-tight text-white md:text-4xl">
                     {pkg.price}
                   </p>
                 </div>
@@ -350,14 +354,17 @@ export default function Page() {
 
         <GallerySlider images={galleryImages} onImageClick={setSelectedImageIndex} dir={dir} />
       </section>
+      
+      </div>
+      {/* END OF WRAPPER */}
 
-      <section id="contact" className="scroll-mt-28 mx-auto max-w-6xl px-4 py-20">
-        <div className="text-center md:text-left">
-          <h2 className="font-[var(--font-oswald)] text-4xl font-bold uppercase text-white md:text-5xl">
+      <section id="contact" className="scroll-mt-28 mx-auto max-w-6xl px-4 py-16 md:py-20">
+        <div className="text-center md:text-left mb-8">
+          <h2 className="font-[var(--font-oswald)] text-3xl font-bold uppercase text-white md:text-5xl">
             {lang === "ar" ? "تواصل معنا" : "Contact Us"}
           </h2>
 
-          <p className="mt-3 max-w-2xl text-lg text-white/60 mx-auto md:mx-0">
+          <p className="mt-2 max-w-2xl text-base text-white/60 mx-auto md:mx-0 md:text-lg">
             {lang === "ar"
               ? "للاستفسار أو الانضمام، تواصل معنا مباشرة عبر الهاتف أو واتساب أو من خلال صفحاتنا الرسمية."
               : "For inquiries or joining, contact us directly by phone, WhatsApp, or through our official social pages."}
@@ -365,9 +372,9 @@ export default function Page() {
         </div>
 
         <div className="mt-10 grid gap-8 md:grid-cols-2 lg:gap-10">
-          <div className="space-y-8">
-            <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#0a1017] to-[#04070a] p-8 shadow-[0_0_40px_rgba(0,0,0,0.3)]">
-              <h3 className="text-2xl md:text-3xl font-[var(--font-oswald)] uppercase font-bold text-white">
+          <div className="space-y-6 md:space-y-8">
+            <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#0a1017] to-[#04070a] p-6 md:p-8 shadow-[0_0_40px_rgba(0,0,0,0.3)]">
+              <h3 className="text-xl md:text-3xl font-[var(--font-oswald)] uppercase font-bold text-white">
                 {lang === "ar" ? "بيانات التواصل" : "Contact Details"}
               </h3>
 
@@ -408,8 +415,8 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#0a1017] to-[#04070a] p-8 shadow-[0_0_40px_rgba(0,0,0,0.3)]">
-              <h3 className="text-2xl md:text-3xl font-[var(--font-oswald)] uppercase font-bold text-white">
+            <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#0a1017] to-[#04070a] p-6 md:p-8 shadow-[0_0_40px_rgba(0,0,0,0.3)]">
+              <h3 className="text-xl md:text-3xl font-[var(--font-oswald)] uppercase font-bold text-white">
                 {lang === "ar" ? "تابعنا" : "Follow Us"}
               </h3>
 
@@ -475,8 +482,8 @@ export default function Page() {
           </div>
 
           <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a1017] shadow-[0_0_40px_rgba(0,0,0,0.3)]">
-            <div className="border-b border-white/10 px-8 py-6">
-              <h3 className="text-2xl md:text-3xl font-[var(--font-oswald)] uppercase font-bold text-white">
+            <div className="border-b border-white/10 px-6 py-4 md:px-8 md:py-6">
+              <h3 className="text-xl md:text-3xl font-[var(--font-oswald)] uppercase font-bold text-white">
                 {lang === "ar" ? "موقعنا" : "Our Location"}
               </h3>
             </div>

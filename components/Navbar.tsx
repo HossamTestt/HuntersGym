@@ -45,7 +45,7 @@ export default function Navbar({
             />
 
             <div className="flex flex-col leading-tight">
-              <p className="font-[var(--font-oswald)] text-lg font-bold uppercase tracking-tight text-white md:text-2xl">
+              <p className="font-[var(--font-oswald)] text-base font-bold uppercase tracking-tight text-white md:text-xl">
                 Hunters Gym
               </p>
               <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.38em] text-[#EEB41E] md:text-xs">
@@ -120,10 +120,10 @@ export default function Navbar({
               </button>
             </div>
 
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-5">
               <a
                 href="#memberships"
-                className="text-lg font-medium text-white/80 transition hover:text-white hover:translate-x-1"
+                className="text-base font-medium text-white/80 transition hover:text-white hover:translate-x-1 md:text-lg"
                 onClick={() => setMobileOpen(false)}
               >
                 {lang === "ar" ? "العضويات" : "Memberships"}
@@ -131,7 +131,7 @@ export default function Navbar({
 
               <a
                 href="#gallery"
-                className="text-lg font-medium text-white/80 transition hover:text-white hover:translate-x-1"
+                className="text-base font-medium text-white/80 transition hover:text-white hover:translate-x-1 md:text-lg"
                 onClick={() => setMobileOpen(false)}
               >
                 {lang === "ar" ? "الجاليري" : "Gallery"}
@@ -139,7 +139,7 @@ export default function Navbar({
 
               <a
                 href="#contact"
-                className="text-lg font-medium text-white/80 transition hover:text-white hover:translate-x-1"
+                className="text-base font-medium text-white/80 transition hover:text-white hover:translate-x-1 md:text-lg"
                 onClick={() => setMobileOpen(false)}
               >
                 {lang === "ar" ? "تواصل" : "Contact"}

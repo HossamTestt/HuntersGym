@@ -1,0 +1,60 @@
+﻿diff --git a/app/globals.css b/app/globals.css
+index 9cfb5bb..edfbbb5 100644
+--- a/app/globals.css
++++ b/app/globals.css
+@@ -9,6 +9,17 @@
+ 
+ html {
+   scroll-behavior: smooth;
++  
++  html[dir="rtl"] h1 {
++  font-size: 2rem;
++}
++
++html[dir="rtl"] h2 {
++  font-size: 1.5rem;
++}
++
++html[dir="rtl"] p {
++  font-size: 1rem;
+ }
+ 
+ body {
+@@ -24,4 +35,4 @@ body {
+ ::selection {
+   background-color: #EEB41E;
+   color: #000;
+-}
+\ No newline at end of file
++}
+diff --git a/app/layout.tsx b/app/layout.tsx
+index 59d4dce..97abe02 100644
+--- a/app/layout.tsx
++++ b/app/layout.tsx
+@@ -12,9 +12,9 @@ const oswald = Oswald({
+   variable: "--font-oswald",
+ });
+ 
+-const alexandria = Alexandria({
++const alexandria = Cairo({
+   subsets: ["latin", "arabic"],
+-  variable: "--font-alexandria",
++  variable: "--font-cairo",
+ });
+ 
+ export const metadata: Metadata = {
+@@ -31,10 +31,10 @@ export default function RootLayout({
+   children: React.ReactNode;
+ }) {
+   return (
+-    <html lang="en">
+-      <body className={`${montserrat.variable} ${oswald.variable} ${alexandria.variable} font-sans antialiased scroll-smooth`}>
++      <html lang="en" dir="ltr"> 
++        <body className={`${montserrat.variable} ${oswald.variable} ${alexandria.variable} font-sans antialiased scroll-smooth`}>
+         {children}
+       </body>
+     </html>
+   );
+-}
+\ No newline at end of file
++}
