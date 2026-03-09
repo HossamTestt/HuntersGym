@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@theme {
+  --font-oswald: var(--font-oswald);
+  --font-montserrat: var(--font-montserrat);
+  --font-alexandria: var(--font-alexandria);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -8,8 +14,14 @@ html {
 body {
   background: #03070b;
   color: white;
+  font-family: var(--font-alexandria), sans-serif;
 }
 
 * {
   box-sizing: border-box;
+}
+
+::selection {
+  background-color: #EEB41E;
+  color: #000;
 }

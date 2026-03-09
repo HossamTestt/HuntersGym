@@ -30,8 +30,8 @@ export default function Navbar({
       <header
         className={`sticky top-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "border-b border-[#EEB41E]/15 bg-[#03070b]/92 shadow-[0_10px_40px_rgba(0,0,0,0.45)] backdrop-blur-xl"
-            : "bg-[#03070b]/80 backdrop-blur-md"
+            ? "border-b border-[#EEB41E]/15 bg-[#03070b]/85 shadow-[0_10px_40px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+            : "bg-transparent backdrop-blur-md"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6">
@@ -98,32 +98,32 @@ export default function Navbar({
 
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-[80] bg-black/70 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-[80] bg-[#03070b]/60 backdrop-blur-xl transition-all duration-500 animate-in fade-in md:hidden"
           onClick={() => setMobileOpen(false)}
         >
           <div
-            className={`absolute top-0 h-full w-[82%] max-w-[340px] bg-[#03070b] p-6 shadow-[0_0_30px_rgba(0,0,0,0.35)] ${
-              lang === "ar" ? "right-0" : "left-0"
-            }`}
+            className={`absolute top-0 h-full w-[85%] max-w-[360px] bg-gradient-to-b from-[#080d14] to-[#03070b] p-8 shadow-[0_0_50px_rgba(0,0,0,0.8)] border-white/5 ${
+              lang === "ar" ? "right-0 border-l" : "left-0 border-r"
+            } animate-in slide-in-from-${lang === "ar" ? "right" : "left"}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="mb-8 flex items-center justify-between">
-              <p className="font-[var(--font-oswald)] text-2xl font-bold uppercase text-white">
-                Menu
+            <div className="mb-10 flex items-center justify-between">
+              <p className="font-[var(--font-oswald)] text-3xl font-bold uppercase tracking-wide text-white">
+                {lang === "ar" ? "القائمة" : "Menu"}
               </p>
               <button
-                className="rounded-xl border border-white/10 bg-white/5 p-2 text-white"
+                className="rounded-2xl border border-white/10 bg-white/5 p-2.5 text-white transition hover:bg-white/10 hover:scale-105"
                 onClick={() => setMobileOpen(false)}
                 aria-label="Close menu"
               >
-                <X className="h-5 w-5" />
+                <X className="h-6 w-6" />
               </button>
             </div>
 
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-6">
               <a
                 href="#memberships"
-                className="text-lg font-semibold text-white/85 hover:text-white"
+                className="text-xl font-medium text-white/80 transition hover:text-white hover:translate-x-1"
                 onClick={() => setMobileOpen(false)}
               >
                 {lang === "ar" ? "العضويات" : "Memberships"}
@@ -131,7 +131,7 @@ export default function Navbar({
 
               <a
                 href="#gallery"
-                className="text-lg font-semibold text-white/85 hover:text-white"
+                className="text-xl font-medium text-white/80 transition hover:text-white hover:translate-x-1"
                 onClick={() => setMobileOpen(false)}
               >
                 {lang === "ar" ? "الجاليري" : "Gallery"}
@@ -139,14 +139,16 @@ export default function Navbar({
 
               <a
                 href="#contact"
-                className="text-lg font-semibold text-white/85 hover:text-white"
+                className="text-xl font-medium text-white/80 transition hover:text-white hover:translate-x-1"
                 onClick={() => setMobileOpen(false)}
               >
                 {lang === "ar" ? "تواصل" : "Contact"}
               </a>
 
+              <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
               <button
-                className="mt-3 rounded-xl border border-white/15 bg-white/5 px-4 py-3 font-semibold text-white transition hover:bg-white/10"
+                className="mt-2 flex w-full items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-4 py-4 font-bold text-white transition duration-300 hover:bg-white/10 active:scale-95"
                 onClick={() => setLang(lang === "ar" ? "en" : "ar")}
               >
                 {lang === "ar" ? "Switch to English" : "التبديل إلى العربية"}
@@ -156,9 +158,9 @@ export default function Navbar({
                 href={site.whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-xl bg-[#EEB41E] px-5 py-3 text-center font-bold text-black transition hover:bg-[#D1830C]"
+                className="mt-2 flex w-full items-center justify-center rounded-2xl bg-[#EEB41E] px-5 py-4 font-extrabold text-black shadow-[0_0_20px_rgba(238,180,30,0.2)] transition duration-300 hover:-translate-y-1 hover:bg-[#D1830C] hover:shadow-[0_0_30px_rgba(238,180,30,0.35)] active:scale-95"
               >
-                WhatsApp
+                {lang === "ar" ? "تواصل عبر واتساب" : "WhatsApp"}
               </a>
             </div>
           </div>

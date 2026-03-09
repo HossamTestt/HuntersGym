@@ -180,11 +180,11 @@ export default function Page() {
       <Navbar lang={lang} setLang={setLang} />
       <WhatsAppFloating />
 
-      <section id="home" className="scroll-mt-28 mx-auto max-w-6xl px-4 pt-8 md:pt-12">
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#05090d] px-6 py-8 shadow-[0_0_60px_rgba(0,0,0,0.45)] transition duration-500 hover:scale-[1.01] md:px-10 md:py-10">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(238,180,30,0.07),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(238,180,30,0.07),transparent_22%)]" />
-          <div className="pointer-events-none absolute -left-8 top-10 h-40 w-40 animate-pulse rounded-full bg-[#EEB41E]/10 blur-3xl" />
-          <div className="pointer-events-none absolute bottom-0 right-10 h-44 w-44 animate-pulse rounded-full bg-[#EEB41E]/10 blur-3xl [animation-delay:700ms]" />
+      <section id="home" className="scroll-mt-28 mx-auto max-w-6xl px-4 pt-6 md:pt-12">
+        <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-b from-[#0a1017] to-[#04070a] px-6 py-10 shadow-[0_0_80px_rgba(0,0,0,0.6)] transition duration-700 hover:border-white/20 hover:shadow-[0_0_100px_rgba(238,180,30,0.15)] md:px-12 md:py-16">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(238,180,30,0.06),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(238,180,30,0.06),transparent_30%)]" />
+          <div className="pointer-events-none absolute -left-10 top-10 h-48 w-48 animate-pulse rounded-full bg-[#EEB41E]/10 blur-3xl lg:h-64 lg:w-64" />
+          <div className="pointer-events-none absolute bottom-0 right-10 h-56 w-56 animate-pulse rounded-full bg-[#EEB41E]/10 blur-3xl [animation-delay:700ms] lg:h-72 lg:w-72" />
 
           <img
             src="/logo-watermark.png"
@@ -210,19 +210,19 @@ export default function Page() {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="mt-4 font-[var(--font-oswald)] text-5xl font-bold uppercase leading-[0.92] tracking-tight text-white md:text-7xl"
+              className="mt-6 font-[var(--font-oswald)] text-6xl font-bold uppercase leading-[0.9] tracking-tight text-white md:text-7xl lg:text-[5.5rem]"
             >
               {lang === "ar" ? (
                 <>
                   اتدرّب بعقلية
-                  <span className="block text-[#f8f8f8] drop-shadow-[0_0_18px_rgba(255,255,255,0.06)]">
+                  <span className="block mt-1 text-[#f8f8f8] drop-shadow-[0_0_24px_rgba(255,255,255,0.1)]">
                     الصياد
                   </span>
                 </>
               ) : (
                 <>
                   Train Like a
-                  <span className="block text-[#f8f8f8] drop-shadow-[0_0_18px_rgba(255,255,255,0.06)]">
+                  <span className="block mt-1 text-[#f8f8f8] drop-shadow-[0_0_24px_rgba(255,255,255,0.1)]">
                     Hunter
                   </span>
                 </>
@@ -233,7 +233,7 @@ export default function Page() {
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15 }}
-              className="mt-5 max-w-2xl text-base leading-8 text-white/72 md:text-lg md:leading-9"
+              className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 md:text-xl md:leading-loose"
             >
               {lang === "ar"
                 ? "مكان مصمم للقوة والانضباط والتحول الحقيقي. أجهزة قوية، أجواء احترافية، وتجربة تدريب تدفعك للأمام."
@@ -244,32 +244,30 @@ export default function Page() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
-              className="mt-7 flex flex-col gap-4 sm:flex-row"
+              className="mt-8 flex flex-col gap-4 sm:flex-row"
             >
               <a
                 href={site.whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-2xl bg-[#EEB41E] px-7 py-4 text-base font-extrabold text-black transition duration-300 hover:scale-[1.03] hover:bg-[#D1830C] hover:shadow-[0_0_24px_rgba(238,180,30,0.28)]"
+                className="inline-flex items-center justify-center rounded-2xl bg-[#EEB41E] px-8 py-4.5 text-base font-extrabold text-black transition duration-300 hover:scale-[1.03] hover:bg-[#D1830C] hover:shadow-[0_0_30px_rgba(238,180,30,0.35)]"
               >
                 {lang === "ar" ? "احجز عبر واتساب" : "Join via WhatsApp"}
               </a>
 
               <a
                 href="#memberships"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-7 py-4 text-base font-bold text-white transition duration-300 hover:scale-[1.03] hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-8 py-4.5 text-base font-bold text-white transition duration-300 hover:scale-[1.03] hover:bg-white/10"
               >
                 {lang === "ar" ? "شوف العضويات" : "See memberships"}
               </a>
             </motion.div>
 
-            <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <div className="mt-10 grid gap-4 grid-cols-2 md:grid-cols-4">
               {services.map((item, i) => (
                 <div
                   key={item}
-                  className={`rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-sm font-bold text-white/90 backdrop-blur-sm shadow-[0_0_20px_rgba(0,0,0,0.18)] transition duration-300 hover:border-[#EEB41E]/35 hover:bg-white/[0.07] hover:[transform:rotateX(4deg)_rotateY(-4deg)_translateY(-6px)] ${
-                    i === 7 ? "md:col-start-2" : ""
-                  }`}
+                  className="flex items-center justify-center rounded-2xl border border-white/5 bg-white/[0.02] px-3 py-4 text-center text-sm font-medium text-white/80 backdrop-blur-sm transition duration-300 hover:border-[#EEB41E]/40 hover:bg-white/[0.06] hover:text-white hover:[transform:rotateX(4deg)_rotateY(-4deg)_translateY(-4px)]"
                 >
                   {item}
                 </div>
@@ -279,30 +277,31 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="memberships" className="scroll-mt-28 mx-auto max-w-6xl px-4 pt-14">
-        <div className="mb-7">
-          <h2 className="font-[var(--font-oswald)] text-4xl font-bold uppercase text-white md:text-5xl">
+      <section id="memberships" className="scroll-mt-28 mx-auto max-w-6xl px-4 pt-20">
+        <div className="mb-10 text-center md:text-left">
+          <h2 className="font-[var(--font-oswald)] text-5xl font-bold uppercase text-white md:text-6xl">
             {lang === "ar" ? "العضويات" : "Membership Plans"}
           </h2>
-          <p className="mt-2 max-w-2xl text-white/65">
+          <p className="mt-3 max-w-2xl text-lg text-white/60 mx-auto md:mx-0">
             {lang === "ar"
               ? "اختر الباقة المناسبة لهدفك واستمتع بتجربة تدريب متكاملة داخل Hunters Gym."
               : "Choose the package that fits your goals and enjoy a complete premium training experience at Hunters Gym."}
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
           {memberships.map((pkg) => (
             <div
               key={pkg.nameEn}
-              className="rounded-[28px] border border-white/10 bg-[#0b1117]/80 p-6 shadow-[0_0_30px_rgba(0,0,0,0.18)] transition duration-300 hover:border-[#EEB41E]/40 hover:shadow-[0_0_30px_rgba(238,180,30,0.10)] hover:[transform:rotateX(3deg)_rotateY(-3deg)_translateY(-8px)] md:p-7"
+              className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-[#0e151e] to-[#070b10] p-7 shadow-[0_0_40px_rgba(0,0,0,0.3)] transition-all duration-500 hover:-translate-y-2 hover:border-[#EEB41E]/50 hover:shadow-[0_0_50px_rgba(238,180,30,0.2)] md:p-9"
             >
+              <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#EEB41E]/5 blur-[80px] transition-all duration-500 group-hover:bg-[#EEB41E]/10" />
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-lg font-extrabold text-[#EEB41E]">
                     {lang === "ar" ? pkg.nameAr : pkg.nameEn}
                   </p>
-                  <p className="mt-3 text-4xl font-black tracking-tight text-white">
+                  <p className="mt-3 font-[var(--font-oswald)] text-5xl font-bold tracking-tight text-white">
                     {pkg.price}
                   </p>
                 </div>
@@ -336,13 +335,13 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="gallery" className="scroll-mt-28 mx-auto max-w-6xl px-4 pt-14">
-        <div className={lang === "ar" ? "text-right" : "text-left"}>
-          <h2 className="font-[var(--font-oswald)] text-4xl font-bold uppercase text-white md:text-5xl">
+      <section id="gallery" className="scroll-mt-28 mx-auto max-w-6xl px-4 pt-20">
+        <div className="text-center md:text-left">
+          <h2 className="font-[var(--font-oswald)] text-5xl font-bold uppercase text-white md:text-6xl">
             {lang === "ar" ? "الجاليري" : "Gallery"}
           </h2>
 
-          <p className="mt-2 text-white/65">
+          <p className="mt-3 text-lg text-white/60">
             {lang === "ar"
               ? "لقطات من أجواء Hunters Gym"
               : "A look inside Hunters Gym"}
@@ -352,34 +351,36 @@ export default function Page() {
         <GallerySlider images={galleryImages} onImageClick={setSelectedImageIndex} />
       </section>
 
-      <section id="contact" className="scroll-mt-28 mx-auto max-w-6xl px-4 py-14">
-        <h2 className="font-[var(--font-oswald)] text-4xl font-bold uppercase text-white md:text-5xl">
-          {lang === "ar" ? "تواصل معنا" : "Contact Us"}
-        </h2>
+      <section id="contact" className="scroll-mt-28 mx-auto max-w-6xl px-4 py-20">
+        <div className="text-center md:text-left">
+          <h2 className="font-[var(--font-oswald)] text-5xl font-bold uppercase text-white md:text-6xl">
+            {lang === "ar" ? "تواصل معنا" : "Contact Us"}
+          </h2>
 
-        <p className="mt-3 max-w-2xl text-white/70">
-          {lang === "ar"
-            ? "للاستفسار أو الانضمام، تواصل معنا مباشرة عبر الهاتف أو واتساب أو من خلال صفحاتنا الرسمية."
-            : "For inquiries or joining, contact us directly by phone, WhatsApp, or through our official social pages."}
-        </p>
+          <p className="mt-3 max-w-2xl text-lg text-white/60 mx-auto md:mx-0">
+            {lang === "ar"
+              ? "للاستفسار أو الانضمام، تواصل معنا مباشرة عبر الهاتف أو واتساب أو من خلال صفحاتنا الرسمية."
+              : "For inquiries or joining, contact us directly by phone, WhatsApp, or through our official social pages."}
+          </p>
+        </div>
 
-        <div className="mt-7 grid gap-6 md:grid-cols-2">
-          <div className="space-y-6">
-            <div className="rounded-3xl border border-white/10 bg-[#212526]/40 p-6 shadow-[0_0_30px_rgba(0,0,0,0.2)]">
-              <h3 className="text-2xl font-bold text-white">
+        <div className="mt-10 grid gap-8 md:grid-cols-2 lg:gap-10">
+          <div className="space-y-8">
+            <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#0a1017] to-[#04070a] p-8 shadow-[0_0_40px_rgba(0,0,0,0.3)]">
+              <h3 className="text-3xl font-[var(--font-oswald)] uppercase font-bold text-white">
                 {lang === "ar" ? "بيانات التواصل" : "Contact Details"}
               </h3>
 
-              <div className="mt-5 space-y-4 text-white/75">
-                <p>
-                  <span className="font-semibold text-white">
+              <div className="mt-6 flex flex-col gap-5 text-white/75">
+                <p className="text-lg">
+                  <span className="font-bold text-white mb-1 block">
                     {lang === "ar" ? "العنوان: " : "Address: "}
                   </span>
                   {lang === "ar" ? site.addressAr : site.addressEn}
                 </p>
 
-                <p>
-                  <span className="font-semibold text-white">
+                <p className="text-lg">
+                  <span className="font-bold text-white mb-1 block">
                     {lang === "ar" ? "الهاتف: " : "Phone: "}
                   </span>
                   <a href={`tel:${site.phone}`} className="transition hover:text-[#EEB41E]">
@@ -388,48 +389,46 @@ export default function Page() {
                 </p>
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <a
                   href={site.whatsappUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-2xl bg-[#EEB41E] px-5 py-3 font-semibold text-black transition hover:scale-105 hover:bg-[#D1830C]"
+                  className="inline-flex w-full items-center justify-center rounded-2xl bg-[#EEB41E] px-6 py-4 text-sm font-extrabold text-black transition duration-300 hover:-translate-y-1 hover:bg-[#D1830C] hover:shadow-[0_0_24px_rgba(238,180,30,0.3)] sm:w-auto"
                 >
                   {lang === "ar" ? "تواصل واتساب" : "WhatsApp"}
                 </a>
 
                 <a
                   href={`tel:${site.phone}`}
-                  className="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-5 py-3 font-semibold text-white transition hover:scale-105 hover:bg-white/10"
+                  className="inline-flex w-full items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-4 text-sm font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-[0_0_24px_rgba(255,255,255,0.05)] sm:w-auto"
                 >
                   {lang === "ar" ? "اتصل الآن" : "Call Now"}
                 </a>
               </div>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-[#212526]/40 p-6 shadow-[0_0_30px_rgba(0,0,0,0.2)]">
-              <h3 className="text-2xl font-bold text-white">
+            <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#0a1017] to-[#04070a] p-8 shadow-[0_0_40px_rgba(0,0,0,0.3)]">
+              <h3 className="text-3xl font-[var(--font-oswald)] uppercase font-bold text-white">
                 {lang === "ar" ? "تابعنا" : "Follow Us"}
               </h3>
 
-              <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <div className="mt-6 flex flex-col gap-4">
                 <a
                   href={site.social.facebook}
                   target="_blank"
                   rel="noreferrer"
-                  className="group rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-4 transition duration-300 hover:-translate-y-1 hover:border-[#EEB41E]/40 hover:shadow-[0_0_20px_rgba(238,180,30,0.12)]"
+                  className="group flex items-center gap-4 rounded-2xl border border-white/5 bg-white/[0.02] p-4 transition duration-300 hover:border-[#EEB41E]/40 hover:bg-white/[0.04]"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="rounded-xl bg-[#EEB41E]/10 p-3 text-[#EEB41E]">
-                      <Facebook className="h-5 w-5" />
+                  <div className="rounded-xl bg-[#EEB41E]/10 p-3.5 text-[#EEB41E] transition group-hover:scale-110 group-hover:bg-[#EEB41E] group-hover:text-black">
+                    <Facebook className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <div className="text-xl font-bold text-white transition group-hover:text-[#EEB41E]">
+                      Facebook
                     </div>
-                    <div>
-                      <div className="text-lg font-semibold text-white transition group-hover:text-[#EEB41E]">
-                        Facebook
-                      </div>
-                      <div className="mt-1 text-xs text-white/55">
-                        {lang === "ar" ? "تابعنا" : "Follow us"}
-                      </div>
+                    <div className="mt-1 text-sm text-white/50">
+                      {lang === "ar" ? "تابعنا" : "Follow us"}
                     </div>
                   </div>
                 </a>
@@ -438,19 +437,17 @@ export default function Page() {
                   href={site.social.instagram}
                   target="_blank"
                   rel="noreferrer"
-                  className="group rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-4 transition duration-300 hover:-translate-y-1 hover:border-[#EEB41E]/40 hover:shadow-[0_0_20px_rgba(238,180,30,0.12)]"
+                  className="group flex items-center gap-4 rounded-2xl border border-white/5 bg-white/[0.02] p-4 transition duration-300 hover:border-[#EEB41E]/40 hover:bg-white/[0.04]"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="rounded-xl bg-[#EEB41E]/10 p-3 text-[#EEB41E]">
-                      <Instagram className="h-5 w-5" />
+                  <div className="rounded-xl bg-[#EEB41E]/10 p-3.5 text-[#EEB41E] transition group-hover:scale-110 group-hover:bg-[#EEB41E] group-hover:text-black">
+                    <Instagram className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <div className="text-xl font-bold text-white transition group-hover:text-[#EEB41E]">
+                      Instagram
                     </div>
-                    <div>
-                      <div className="text-lg font-semibold text-white transition group-hover:text-[#EEB41E]">
-                        Instagram
-                      </div>
-                      <div className="mt-1 text-xs text-white/55">
-                        {lang === "ar" ? "صور وأخبار" : "Photos & updates"}
-                      </div>
+                    <div className="mt-1 text-sm text-white/50">
+                      {lang === "ar" ? "صور وأخبار" : "Photos & updates"}
                     </div>
                   </div>
                 </a>
@@ -459,19 +456,17 @@ export default function Page() {
                   href={site.social.tiktok}
                   target="_blank"
                   rel="noreferrer"
-                  className="group rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-4 transition duration-300 hover:-translate-y-1 hover:border-[#EEB41E]/40 hover:shadow-[0_0_20px_rgba(238,180,30,0.12)]"
+                  className="group flex items-center gap-4 rounded-2xl border border-white/5 bg-white/[0.02] p-4 transition duration-300 hover:border-[#EEB41E]/40 hover:bg-white/[0.04]"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="rounded-xl bg-[#EEB41E]/10 p-3 text-[#EEB41E]">
-                      <Music2 className="h-5 w-5" />
+                  <div className="rounded-xl bg-[#EEB41E]/10 p-3.5 text-[#EEB41E] transition group-hover:scale-110 group-hover:bg-[#EEB41E] group-hover:text-black">
+                    <Music2 className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <div className="text-xl font-bold text-white transition group-hover:text-[#EEB41E]">
+                      TikTok
                     </div>
-                    <div>
-                      <div className="text-lg font-semibold text-white transition group-hover:text-[#EEB41E]">
-                        TikTok
-                      </div>
-                      <div className="mt-1 text-xs text-white/55">
-                        {lang === "ar" ? "فيديوهات قصيرة" : "Short videos"}
-                      </div>
+                    <div className="mt-1 text-sm text-white/50">
+                      {lang === "ar" ? "فيديوهات قصيرة" : "Short videos"}
                     </div>
                   </div>
                 </a>
@@ -479,9 +474,9 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#212526]/40 shadow-[0_0_30px_rgba(0,0,0,0.2)]">
-            <div className="border-b border-white/10 px-6 py-4">
-              <h3 className="text-2xl font-bold text-white">
+          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a1017] shadow-[0_0_40px_rgba(0,0,0,0.3)]">
+            <div className="border-b border-white/10 px-8 py-6">
+              <h3 className="text-3xl font-[var(--font-oswald)] uppercase font-bold text-white">
                 {lang === "ar" ? "موقعنا" : "Our Location"}
               </h3>
             </div>
