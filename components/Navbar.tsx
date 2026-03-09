@@ -35,13 +35,13 @@ export default function Navbar({
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6">
-          <a href="#home" className="group flex items-center gap-3 md:gap-4">
+          <a href="#home" className={`group flex items-center gap-3 md:gap-4 ${lang === "ar" ? "flex-row-reverse" : "flex-row"}`}>
             <img
               src="/logo.png"
               alt="Hunters Gym"
-              className={`w-auto shrink-0 object-contain transition-all duration-500 ${
+              className={`w-auto shrink-0 object-contain transition-all duration-700 ease-out ${
                 scrolled ? "h-12 md:h-16" : "h-14 md:h-20"
-              } drop-shadow-[0_0_28px_rgba(238,180,30,0.35)] group-hover:scale-105`}
+              } drop-shadow-[0_0_28px_rgba(238,180,30,0.35)] group-hover:scale-105 group-hover:rotate-3 group-hover:drop-shadow-[0_0_35px_rgba(238,180,30,0.6)]`}
             />
 
             <div className="flex flex-col leading-tight">

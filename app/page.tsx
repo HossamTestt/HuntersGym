@@ -168,7 +168,7 @@ export default function Page() {
             className="mx-auto h-24 w-auto animate-pulse drop-shadow-[0_0_30px_rgba(238,180,30,0.35)]"
           />
           <p className="mt-4 text-sm font-bold uppercase tracking-[0.4em] text-[#EEB41E]">
-            Train Like a Hunter
+            {lang === "ar" ? "تدرب كالصياد" : "Train Like a Hunter"}
           </p>
         </div>
       </div>
@@ -178,7 +178,7 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-[#03070b] text-white" dir={dir}>
       <Navbar lang={lang} setLang={setLang} />
-      <WhatsAppFloating />
+      <WhatsAppFloating lang={lang} />
 
       <section id="home" className="scroll-mt-28 mx-auto max-w-6xl px-4 pt-6 md:pt-12">
         <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-b from-[#0a1017] to-[#04070a] px-6 py-10 shadow-[0_0_80px_rgba(0,0,0,0.6)] transition duration-700 hover:border-white/20 hover:shadow-[0_0_100px_rgba(238,180,30,0.15)] md:px-12 md:py-16">

@@ -91,19 +91,27 @@ export default function GallerySlider({
         </button>
       </div>
 
-      <div className="mt-5 flex justify-center gap-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => emblaApi?.scrollTo(index)}
-            className={`h-2.5 rounded-full transition-all ${
-              index === selectedIndex
-                ? "w-8 bg-[#EEB41E]"
-                : "w-2.5 bg-white/20 hover:bg-white/40"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+      <div className="mt-5 flex items-center justify-center gap-4">
+        {/* DESKTOP DOTS */}
+        <div className="hidden md:flex gap-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => emblaApi?.scrollTo(index)}
+              className={`h-2.5 rounded-full transition-all ${
+                index === selectedIndex
+                  ? "w-8 bg-[#EEB41E]"
+                  : "w-2.5 bg-white/20 hover:bg-white/40"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* MOBILE COUNTER */}
+        <div className="md:hidden flex items-center justify-center font-[var(--font-oswald)] text-lg font-bold tracking-widest text-[#EEB41E] bg-white/5 px-6 py-2 rounded-full border border-white/10">
+          {selectedIndex + 1} <span className="opacity-40 mx-2 text-white">/</span> {images.length}
+        </div>
       </div>
     </div>
   );
