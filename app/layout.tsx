@@ -12,9 +12,12 @@ const oswald = Oswald({
   variable: "--font-oswald",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Hunters Gym",
   description: "Train Like a Hunter",
+  verification: {
+    google: "cZPztibhOqOHPPfWPL0veS6cFXOMlgvnAGElOUgmzZU",
+  },
 };
 
 export default function RootLayout({
