@@ -9,6 +9,14 @@
 
 html {
   scroll-behavior: smooth;
+
+  html[dir="rtl"] {
+  font-family: var(--font-ar);
+}
+
+html[dir="ltr"] {
+  font-family: var(--font-en);
+}
   
   html[dir="rtl"] h1 {
   font-size: 2rem;
