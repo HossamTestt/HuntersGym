@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Montserrat, Oswald, Alexandria } from "next/font/google";
+import { Montserrat, Oswald, Cairo } from "next/font/google";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -12,9 +12,10 @@ const oswald = Oswald({
   variable: "--font-oswald",
 });
 
-const alexandria = Alexandria({
+const cairo = Cairo({
   subsets: ["latin", "arabic"],
-  variable: "--font-alexandria",
+  variable: "--font-cairo",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -32,7 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} ${oswald.variable} ${alexandria.variable} font-sans antialiased scroll-smooth`}>
+      <body className={`${montserrat.variable} ${oswald.variable} ${cairo.variable} font-sans antialiased scroll-smooth`}>
         {children}
       </body>
     </html>

@@ -45,7 +45,7 @@ export default function Navbar({
             />
 
             <div className="flex flex-col leading-tight">
-              <p className="font-[var(--font-oswald)] text-xl font-bold uppercase tracking-tight text-white md:text-3xl">
+              <p className="font-[var(--font-oswald)] text-lg font-bold uppercase tracking-tight text-white md:text-2xl">
                 Hunters Gym
               </p>
               <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.38em] text-[#EEB41E] md:text-xs">
@@ -108,7 +108,7 @@ export default function Navbar({
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mb-10 flex items-center justify-between">
-              <p className="font-[var(--font-oswald)] text-3xl font-bold uppercase tracking-wide text-white">
+              <p className="font-[var(--font-oswald)] text-2xl font-bold uppercase tracking-wide text-white">
                 {lang === "ar" ? "القائمة" : "Menu"}
               </p>
               <button
@@ -123,7 +123,7 @@ export default function Navbar({
             <div className="flex flex-col gap-6">
               <a
                 href="#memberships"
-                className="text-xl font-medium text-white/80 transition hover:text-white hover:translate-x-1"
+                className="text-lg font-medium text-white/80 transition hover:text-white hover:translate-x-1"
                 onClick={() => setMobileOpen(false)}
               >
                 {lang === "ar" ? "العضويات" : "Memberships"}
@@ -131,7 +131,7 @@ export default function Navbar({
 
               <a
                 href="#gallery"
-                className="text-xl font-medium text-white/80 transition hover:text-white hover:translate-x-1"
+                className="text-lg font-medium text-white/80 transition hover:text-white hover:translate-x-1"
                 onClick={() => setMobileOpen(false)}
               >
                 {lang === "ar" ? "الجاليري" : "Gallery"}
@@ -139,7 +139,7 @@ export default function Navbar({
 
               <a
                 href="#contact"
-                className="text-xl font-medium text-white/80 transition hover:text-white hover:translate-x-1"
+                className="text-lg font-medium text-white/80 transition hover:text-white hover:translate-x-1"
                 onClick={() => setMobileOpen(false)}
               >
                 {lang === "ar" ? "تواصل" : "Contact"}

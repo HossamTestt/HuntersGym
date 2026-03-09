@@ -4,7 +4,7 @@
 @theme {
   --font-oswald: var(--font-oswald);
   --font-montserrat: var(--font-montserrat);
-  --font-alexandria: var(--font-alexandria);
+  --font-cairo: var(--font-cairo);
 }
 
 html {
@@ -14,7 +14,7 @@ html {
 body {
   background: #03070b;
   color: white;
-  font-family: var(--font-alexandria), sans-serif;
+  font-family: var(--font-cairo), sans-serif;
 }
 
 * {

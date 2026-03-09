@@ -8,9 +8,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 export default function GallerySlider({
   images,
   onImageClick,
+  dir = "ltr",
 }: {
   images: string[];
   onImageClick: (index: number) => void;
+  dir?: "rtl" | "ltr";
 }) {
   const autoplay = useRef(
     Autoplay({
@@ -21,7 +23,7 @@ export default function GallerySlider({
   );
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "start" },
+    { loop: true, align: "start", direction: dir },
     [autoplay.current]
   );
 
