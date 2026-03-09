@@ -12,9 +12,9 @@ const oswald = Oswald({
   variable: "--font-oswald",
 });
 
-const alexandria = Alexandria({
+const alexandria = Cairo({
   subsets: ["latin", "arabic"],
-  variable: "--font-alexandria",
+  variable: "--font-cairo",
 });
 
 export const metadata: Metadata = {
@@ -31,8 +31,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${montserrat.variable} ${oswald.variable} ${alexandria.variable} font-sans antialiased scroll-smooth`}>
+      <html lang="en" dir="ltr"> 
+        <body className={`${montserrat.variable} ${oswald.variable} ${alexandria.variable} font-sans antialiased scroll-smooth`}>
         {children}
       </body>
     </html>
