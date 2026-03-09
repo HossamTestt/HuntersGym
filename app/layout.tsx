@@ -10,11 +10,13 @@ const montserrat = Montserrat({
 const oswald = Oswald({
   subsets: ["latin"],
   variable: "--font-oswald",
+  weight: ["400", "600", "700"],
 });
 
 const alexandria = Cairo({
   subsets: ["latin", "arabic"],
   variable: "--font-cairo",
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
