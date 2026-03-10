@@ -51,25 +51,25 @@ export default function Page() {
   const services =
     lang === "ar"
       ? [
-          "أجهزة احترافية",
-          "أجواء تدريب قوية",
-          "طاقة تدريب محفزة",
-          "تحليل InBody",
-          "سبا ومنطقة استشفاء",
-          "تدريب احترافي",
-          "تدريب شخصي",
-          "حصص تدريب جماعي",
-        ]
+        "أجهزة احترافية",
+        "أجواء تدريب قوية",
+        "طاقة تدريب محفزة",
+        "تحليل InBody",
+        "سبا ومنطقة استشفاء",
+        "تدريب احترافي",
+        "تدريب شخصي",
+        "حصص تدريب جماعي",
+      ]
       : [
-          "Premium Equipment",
-          "High Energy Atmosphere",
-          "Motivating Training Energy",
-          "InBody Analysis",
-          "Spa & Recovery Area",
-          "Professional Coaching",
-          "Personal Training",
-          "Group Training Classes",
-        ];
+        "Premium Equipment",
+        "High Energy Atmosphere",
+        "Motivating Training Energy",
+        "InBody Analysis",
+        "Spa & Recovery Area",
+        "Professional Coaching",
+        "Personal Training",
+        "Group Training Classes",
+      ];
 
   const memberships = [
     {
@@ -163,7 +163,7 @@ export default function Page() {
       <div className="flex min-h-screen items-center justify-center bg-[#03070b]">
         <div className="text-center">
           <img
-            src="/logo.png"
+            src="/logo-large.png"
             alt="Hunters Gym"
             className="mx-auto h-24 w-auto animate-pulse drop-shadow-[0_0_30px_rgba(238,180,30,0.35)]"
           />
@@ -189,19 +189,25 @@ export default function Page() {
           <img
             src="/logo-watermark.png"
             alt=""
-            className={`pointer-events-none absolute top-1/2 z-0 hidden -translate-y-1/2 opacity-50 blur-[1px] md:block lg:w-[440px] ${
-              lang === "ar"
+            className={`pointer-events-none absolute top-1/2 z-0 hidden -translate-y-1/2 opacity-50 blur-[1px] md:block lg:w-[440px] ${lang === "ar"
                 ? "left-[-20px] w-[340px]"
                 : "right-[-20px] w-[340px]"
-            }`}
+              }`}
           />
 
           <div
-            className={`relative z-10 max-w-3xl ${
-              lang === "ar" ? "ml-auto text-right" : "text-left"
-            }`}
+            className="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center"
             dir={lang === "ar" ? "rtl" : "ltr"}
           >
+            <motion.img
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7 }}
+              src="/logo-large.png"
+              alt="Hunters Gym"
+              className="mb-4 h-28 w-auto md:h-40 drop-shadow-[0_0_30px_rgba(238,180,30,0.5)]"
+            />
+            
             <p className="text-xs font-bold uppercase tracking-[0.38em] text-[#EEB41E] md:text-sm">
               Hunters Gym • Mokattam
             </p>
@@ -210,7 +216,7 @@ export default function Page() {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="mt-6 font-[var(--font-oswald)] text-4xl font-bold uppercase leading-[1.1] tracking-tight text-white md:text-6xl lg:text-7xl"
+              className="mt-6 mx-auto font-[var(--font-oswald)] text-4xl font-bold uppercase leading-[1.1] tracking-tight text-white md:text-6xl lg:text-7xl"
             >
               {lang === "ar" ? (
                 <>
@@ -233,7 +239,7 @@ export default function Page() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="mt-6 max-w-2xl text-base text-white/70 mx-auto lg:mx-0 md:text-xl lg:text-2xl font-medium leading-relaxed"
+              className="mt-6 max-w-2xl text-base text-white/70 mx-auto md:text-xl lg:text-2xl font-medium leading-relaxed text-center"
             >
               {lang === "ar"
                 ? "مكان مصمم للقوة والانضباط والتحول الحقيقي. أجهزة قوية، أجواء احترافية، وتجربة تدريب تدفعك للأمام."
@@ -244,7 +250,7 @@ export default function Page() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
-              className="mt-8 flex flex-col gap-4 sm:flex-row"
+              className="mt-8 flex w-full flex-col items-center justify-center gap-4 sm:flex-row"
             >
               <a
                 href={site.whatsappUrl}
@@ -263,7 +269,7 @@ export default function Page() {
               </a>
             </motion.div>
 
-            <div className="mt-10 grid gap-4 grid-cols-2 md:grid-cols-4">
+            <div className="mt-10 grid w-full max-w-4xl gap-4 grid-cols-2 md:grid-cols-4 mx-auto">
               {services.map((item, i) => (
                 <div
                   key={item}
@@ -279,82 +285,82 @@ export default function Page() {
 
       {/* WRAPPER FOR REORDERING SECTIONS ON MOBILE */}
       <div className="flex flex-col-reverse md:flex-col">
-        
+
         {/* MEMBERSHIPS SECTION */}
         <section id="memberships" className="scroll-mt-28 mx-auto max-w-6xl px-4 pt-16 md:pt-20">
-        <div className="mb-8 text-center md:text-left">
-          <h2 className="font-[var(--font-oswald)] text-3xl font-bold uppercase text-white md:text-5xl">
-            {lang === "ar" ? "العضويات" : "Membership Plans"}
-          </h2>
-          <p className="mt-2 max-w-2xl text-base text-white/60 mx-auto md:mx-0 md:text-lg">
-            {lang === "ar"
-              ? "اختر الباقة المناسبة لهدفك واستمتع بتجربة تدريب متكاملة داخل Hunters Gym."
-              : "Choose the package that fits your goals and enjoy a complete premium training experience at Hunters Gym."}
-          </p>
-        </div>
+          <div className="mb-8 text-center md:text-left">
+            <h2 className="font-[var(--font-oswald)] text-3xl font-bold uppercase text-white md:text-5xl">
+              {lang === "ar" ? "العضويات" : "Membership Plans"}
+            </h2>
+            <p className="mt-2 max-w-2xl text-base text-white/60 mx-auto md:mx-0 md:text-lg">
+              {lang === "ar"
+                ? "اختر الباقة المناسبة لهدفك واستمتع بتجربة تدريب متكاملة داخل Hunters Gym."
+                : "Choose the package that fits your goals and enjoy a complete premium training experience at Hunters Gym."}
+            </p>
+          </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
-          {memberships.map((pkg) => (
-            <div
-              key={pkg.nameEn}
-              className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-[#0e151e] to-[#070b10] p-7 shadow-[0_0_40px_rgba(0,0,0,0.3)] transition-all duration-500 hover:-translate-y-2 hover:border-[#EEB41E]/50 hover:shadow-[0_0_50px_rgba(238,180,30,0.2)] md:p-9"
-            >
-              <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#EEB41E]/5 blur-[80px] transition-all duration-500 group-hover:bg-[#EEB41E]/10" />
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-lg font-extrabold text-[#EEB41E]">
-                    {lang === "ar" ? pkg.nameAr : pkg.nameEn}
-                  </p>
-                  <p className="mt-2 font-[var(--font-oswald)] text-3xl font-bold tracking-tight text-white md:text-4xl">
-                    {pkg.price}
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border border-[#EEB41E]/20 bg-[#EEB41E]/10 px-3 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#EEB41E]">
-                  {lang === "ar" ? "مميز" : "Premium"}
-                </div>
-              </div>
-
-              <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-              <ul className="mt-6 space-y-3 text-sm leading-7 text-white/85">
-                {(lang === "ar" ? pkg.featuresAr : pkg.featuresEn).map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <span className="mt-[6px] h-2 w-2 shrink-0 rounded-full bg-[#EEB41E]" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href={site.whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-8 inline-flex w-full items-center justify-center rounded-2xl bg-[#EEB41E] px-5 py-3 text-sm font-extrabold text-black transition duration-300 hover:scale-[1.02] hover:bg-[#D1830C] hover:shadow-[0_0_24px_rgba(238,180,30,0.22)]"
+          <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
+            {memberships.map((pkg) => (
+              <div
+                key={pkg.nameEn}
+                className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-[#0e151e] to-[#070b10] p-7 shadow-[0_0_40px_rgba(0,0,0,0.3)] transition-all duration-500 hover:-translate-y-2 hover:border-[#EEB41E]/50 hover:shadow-[0_0_50px_rgba(238,180,30,0.2)] md:p-9"
               >
-                {lang === "ar" ? "احجز عبر واتساب" : "Join via WhatsApp"}
-              </a>
-            </div>
-          ))}
-        </div>
-      </section>
+                <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#EEB41E]/5 blur-[80px] transition-all duration-500 group-hover:bg-[#EEB41E]/10" />
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-lg font-extrabold text-[#EEB41E]">
+                      {lang === "ar" ? pkg.nameAr : pkg.nameEn}
+                    </p>
+                    <p className="mt-2 font-[var(--font-oswald)] text-3xl font-bold tracking-tight text-white md:text-4xl">
+                      {pkg.price}
+                    </p>
+                  </div>
 
-      <section id="gallery" className="scroll-mt-28 mx-auto max-w-6xl px-4 pt-20">
-        <div className="text-center md:text-left">
-          <h2 className="font-[var(--font-oswald)] text-4xl font-bold uppercase text-white md:text-5xl">
-            {lang === "ar" ? "الجاليري" : "Gallery"}
-          </h2>
+                  <div className="rounded-2xl border border-[#EEB41E]/20 bg-[#EEB41E]/10 px-3 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#EEB41E]">
+                    {lang === "ar" ? "مميز" : "Premium"}
+                  </div>
+                </div>
 
-          <p className="mt-3 text-lg text-white/60">
-            {lang === "ar"
-              ? "لقطات من أجواء Hunters Gym"
-              : "A look inside Hunters Gym"}
-          </p>
-        </div>
+                <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-        <GallerySlider images={galleryImages} onImageClick={setSelectedImageIndex} dir={dir} />
-      </section>
-      
+                <ul className="mt-6 space-y-3 text-sm leading-7 text-white/85">
+                  {(lang === "ar" ? pkg.featuresAr : pkg.featuresEn).map((feature) => (
+                    <li key={feature} className="flex items-start gap-3">
+                      <span className="mt-[6px] h-2 w-2 shrink-0 rounded-full bg-[#EEB41E]" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={site.whatsappUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-8 inline-flex w-full items-center justify-center rounded-2xl bg-[#EEB41E] px-5 py-3 text-sm font-extrabold text-black transition duration-300 hover:scale-[1.02] hover:bg-[#D1830C] hover:shadow-[0_0_24px_rgba(238,180,30,0.22)]"
+                >
+                  {lang === "ar" ? "احجز عبر واتساب" : "Join via WhatsApp"}
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="gallery" className="scroll-mt-28 mx-auto max-w-6xl px-4 pt-20">
+          <div className="text-center md:text-left">
+            <h2 className="font-[var(--font-oswald)] text-4xl font-bold uppercase text-white md:text-5xl">
+              {lang === "ar" ? "الجاليري" : "Gallery"}
+            </h2>
+
+            <p className="mt-3 text-lg text-white/60">
+              {lang === "ar"
+                ? "لقطات من أجواء Hunters Gym"
+                : "A look inside Hunters Gym"}
+            </p>
+          </div>
+
+          <GallerySlider images={galleryImages} onImageClick={setSelectedImageIndex} dir={dir} />
+        </section>
+
       </div>
       {/* END OF WRAPPER */}
 
