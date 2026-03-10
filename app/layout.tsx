@@ -19,8 +19,17 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "Hunters Gym - Premium Fitness Experience",
-  description: "Train Like a Hunter in our premium facility. Equipped for strength, designed for greatness.",
+  title: "Hunters Gym | أكبر جيم في المقطم",
+  description:
+    "Hunters Gym هو أكبر جيم في المقطم يوفر أحدث معدات الجيم، كوتشينج احترافي، وبرامج تدريب متقدمة لبناء العضلات واللياقة. Train Like a Hunter في أفضل جيم في Mokattam.",
+  keywords: [
+    "Hunters Gym",
+    "اكبر جيم في المقطم",
+    "Gym Mokattam",
+    "Best Gym Mokattam",
+    "Fitness Gym Cairo",
+    "Bodybuilding Gym Mokattam"
+  ],
   verification: {
     google: "cZPztibhOqOHPPfWPL0veS6cFXOMlgvnAGElOUgmzZU",
   },
