@@ -33,6 +33,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "HealthClub",
+              name: "Hunters Gym",
+              url: "https://www.huntersgym.com",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Mokattam",
+                addressCountry: "EG",
+              },
+            }),
+          }}
+        />
+      </head>
       <body className={`${montserrat.variable} ${oswald.variable} ${cairo.variable} font-sans antialiased scroll-smooth`}>
         {children}
       </body>
